@@ -1,16 +1,15 @@
-#!/bin/sh
+#!/bin/sh -eu
 
 name=ubuntu804-python27-carenet
-version=1
+version=2
 
 # 1. bring up the box:
 vagrant up
 
 # 2. set us up the box:
-vagrant ssh -- /vagrant/setup.sh
-
-# 3. clean the box for packaging
-vagrant ssh -- sudo /vagrant/clean.sh
+vagrant ssh -- sudo /vagrant/script/00-setup.sh
+vagrant ssh -- /vagrant/script/01-python.sh
+vagrant ssh -- sudo /vagrant/script/99-cleanup.sh
 
 # 3.  package the box:
 vagrant package --output $name-$version.box
