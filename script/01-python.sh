@@ -9,6 +9,13 @@ PYTHON_PREFIX=/opt/python27
 VAGRANT_HOME=/home/vagrant
 PIP=$PYTHON_PREFIX/bin/pip
 
+if [ -f "$PYTHON_BIN_TGZ" ]
+then
+    sudo mkdir -p $PYTHON_PREFIX
+    sudo tar -C / -zxf $PYTHON_BIN_TGZ
+    exit 0
+fi
+
 if [ ! -f "$PYTHON_SRC_TGZ" ]
 then
     wget -O "$PYTHON_SRC_TGZ" "$PYTHON_URL"
