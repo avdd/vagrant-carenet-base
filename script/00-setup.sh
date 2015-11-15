@@ -5,9 +5,10 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get -qy install \
         language-pack-en \
         ncurses-term \
-        apache2-mpm-prefork \
+        libjpeg-dev \
         libexpat1-dev \
-        libjpeg-dev
+        apache2-mpm-prefork \
+        postgresql-8.3
 
 apt-get -qy build-dep \
         python2.5 \
