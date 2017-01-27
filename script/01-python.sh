@@ -1,10 +1,10 @@
 #!/bin/sh -eu
 
-PYTHON_URL=https://www.python.org/ftp/python/2.7.10/Python-2.7.10.tgz
-PYTHON_MD5=d7547558fd673bd9d38e2108c6b42521
-PYTHON_SRC=Python-2.7.10
-PYTHON_SRC_TGZ=/vagrant/Python-2.7.10.tgz 
-PYTHON_BIN_TGZ=/vagrant/python-2.7.10-linux-i686.tar.gz
+PYTHON_URL=https://www.python.org/ftp/python/2.7.13/Python-2.7.13.tgz
+PYTHON_MD5=17add4bf0ad0ec2f08e0cae6d205c700
+PYTHON_SRC=Python-2.7.13
+PYTHON_SRC_TGZ=/vagrant/Python-2.7.13.tgz
+PYTHON_BIN_TGZ=/vagrant/python-2.7.13-linux-i686.tar.gz
 PYTHON_PREFIX=/opt/python27
 VAGRANT_HOME=/home/vagrant
 PIP=$PYTHON_PREFIX/bin/pip
