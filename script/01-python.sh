@@ -1,13 +1,13 @@
 #!/bin/sh -eu
 
-PYTHON_URL=https://www.python.org/ftp/python/2.7.13/Python-2.7.13.tgz
+PYTHON_VERSION=2.7.13
 PYTHON_MD5=17add4bf0ad0ec2f08e0cae6d205c700
-PYTHON_SRC=Python-2.7.13
-PYTHON_SRC_TGZ=/vagrant/Python-2.7.13.tgz
-PYTHON_BIN_TGZ=/vagrant/python-2.7.13-linux-i686.tar.gz
-PYTHON_PREFIX=/opt/python27
+PYTHON_URL=https://www.python.org/ftp/python/$PYTHON_VERSION/Python-$PYTHON_VERSION.tgz
+PYTHON_SRC=Python-$PYTHON_VERSION
+PYTHON_SRC_TGZ=/vagrant/Python-$PYTHON_VERSION.tgz
+PYTHON_BIN_TGZ=/vagrant/python-$PYTHON_VERSION-linux-i686.tar.gz
+PYTHON_PREFIX=/opt/python-$PYTHON_VERSION
 VAGRANT_HOME=/home/vagrant
-PIP=$PYTHON_PREFIX/bin/pip
 
 if [ -f "$PYTHON_BIN_TGZ" ]
 then
@@ -44,8 +44,8 @@ cd $VAGRANT_HOME/$PYTHON_SRC
             --with-ensurepip=upgrade
 
 make
-sudo make install
-sudo $PYTHON_PREFIX/bin/pip install -U pip setuptools virtualenv wheel
+sudo -H make install
+sudo -H $PYTHON_PREFIX/bin/pip install -U pip setuptools virtualenv wheel
 
 tar zcf $PYTHON_BIN_TGZ $PYTHON_PREFIX
 
