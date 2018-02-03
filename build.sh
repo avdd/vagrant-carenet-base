@@ -1,7 +1,7 @@
 #!/bin/sh -eu
 
 name=ubuntu804-python27-carenet
-version=5
+version=6
 
 # 1. bring up the box:
 vagrant up
